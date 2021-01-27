@@ -1,26 +1,36 @@
 <script>
-	import About from "./components/About.svelte"
+	import About from "./components/About.svelte";
+	import Text from "./components/Text.svelte";
+	import Person from "./components/Person.svelte";
+
 	export let name;
 	export let lastName;
 
-	let svelteLogo = "https://arepa.s3.amazonaws.com/svelte-logo.png"
+	let svelteLogo = "https://arepa.s3.amazonaws.com/svelte-logo.png";
 
+	const data = {
+		name: "Marco",
+		lastName: "Calzada",
+		age: 24,
+	};
 </script>
 
 <main>
 	<h1>Hello {name} {lastName}!</h1>
-	<About/>
-	<img src={svelteLogo} alt="Svelte"/>
+	<About />
+	<Text anotherText="Hola" />
+	<Text />
+	<Person {...data} />
+	<img src={svelteLogo} alt="Svelte" />
 </main>
 
 <style>
-
-	:global(body){
+	:global(body) {
 		background-color: #f2eee2;
 		color: #0084f6;
 	}
 
-	:global(:root){
+	:global(:root) {
 		--theme-color: purple;
 	}
 
